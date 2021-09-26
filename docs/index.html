@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="referrer" content="no-referrer">
 <title>テスト</title>
 <script>
-eval(decodeURIComponent(location.hash.substr(1) || location.search.substr(1)))
+  document.addEventListener("DOMContentLoaded",()=>{
+    window.clickEvents = [];
+    document.addEventListener("click",e=>{clickEvents.forEach(f=>f(e))},false);
+    eval(decodeURIComponent(location.hash.substr(1) || location.search.substr(1)));
+  },false);
 </script>
 </head>
 <body>
